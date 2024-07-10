@@ -8,7 +8,8 @@ enum StorageKey {
 }
 
 sealed class AppStorage {
-  static Future<void> store({required StorageKey key, required String value}) async {
+  static Future<void> store(
+      {required StorageKey key, required String value}) async {
     final SharedPreferences storage = await SharedPreferences.getInstance();
     await storage.setString(key.name, value);
   }
